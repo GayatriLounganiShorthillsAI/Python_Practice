@@ -51,19 +51,51 @@
 
 # -------Types of variable
 
-class Car:
- #  ----- class variable and static variables are same
-        wheels = 4  #class variable , class namespace
-        def __init__(self, mil, company):  #instance variable, instance namespace
-                self.mil=mil
-                self.company=company
+# class Car:
+#  #  ----- class variable and static variables are same
+#         wheels = 4  #class variable , class namespace
+#         def __init__(self, mil, company):  #instance variable, instance namespace
+#                 self.mil=mil
+#                 self.company=company
 
-c = Car(20, "bmw")
-d = Car(30, "range rover")
+# c = Car(20, "bmw")
+# d = Car(30, "range rover")
 
-c.mil=0
-d.company="maruti"
-print(c.mil, c.wheels)
-print(d.company, c.wheels, d.wheels)
+# c.mil=0
+# d.company="maruti"
+# print(c.mil, c.wheels)
+# print(d.company, c.wheels, d.wheels)
 
 
+# ---------Types of method
+# instance variable -> self keyword
+# class variable -> cls keyword
+
+class Student:
+        school = 'Tagore public school'
+        def __init__(self,a,b,c):
+                self.a = a
+                self.b = b
+                self.c = c
+        def avg(self):
+                return (self.a+ self.b+self.c)/3
+        def get_a(self):
+                return self.a
+        def set_a(self, val):
+                self.a = val
+
+        @classmethod   #decorators
+        def getSchool(cls):
+                return cls.school
+        
+        @staticmethod
+        def info():
+                print("this is student class...in abc module")
+c = Student(34,34,34)
+
+print(c.avg())
+
+# both can be used
+print(c.getSchool())
+print(Student.getSchool())
+print(c.info())
