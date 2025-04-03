@@ -15,34 +15,55 @@
 # d.config()
  
 
-class Computer:
-        def __init__(self):
-                self.name = "name"
-                self.age = 20
+# class Computer:
+#         def __init__(self):
+#                 self.name = "name"
+#                 self.age = 20
 
-        def update(self):
-                self.age = 90
-                self.name = "new name"  
-        def compare(self, d):
-                if self.age == d.age :
-                        return True
-                else:
-                        return False
+#         def update(self):
+#                 self.age = 90
+#                 self.name = "new name"  
 
-c = Computer()
-d = Computer()
+#         def compare(self, d):
+#                 if self.age == d.age :
+#                         return True
+#                 else:
+#                         return False
 
-d.name = "riya"
-d.age = 9
+# c = Computer()
+# d = Computer()
 
-c.update()
+# d.name = "riya"
+# d.age = 9
 
-if c.compare(d):
-        print("they are same")
-else:
-        print("they are not same")
+# c.update()
+
+# if c.compare(d):
+#         print("they are same")
+# else:
+#         print("they are not same")
 
 
-print(id(c))
-print(c.name, c.age)
-print(d.name, d.age)
+# print(id(c))
+# print(c.name, c.age)
+# print(d.name, d.age)
+
+
+# -------Types of variable
+
+class Car:
+ #  ----- class variable and static variables are same
+        wheels = 4  #class variable , class namespace
+        def __init__(self, mil, company):  #instance variable, instance namespace
+                self.mil=mil
+                self.company=company
+
+c = Car(20, "bmw")
+d = Car(30, "range rover")
+
+c.mil=0
+d.company="maruti"
+print(c.mil, c.wheels)
+print(d.company, c.wheels, d.wheels)
+
+
