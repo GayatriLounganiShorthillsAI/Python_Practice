@@ -75,6 +75,31 @@
 # a = B() 
 
 
+# class A:
+#        def __init__(self):
+#               print("in A init")
+
+#        def feature1(self):
+#               print("first")
+
+#        def feature2(self):
+#               print("second")
+
+# # B is child class
+# class B(A):
+#        def __init__(self):
+#               # call init of both 
+#               super().__init__() 
+#               print("in b init")
+#        def feature3(self):
+#               print("third")
+#        def feature4(self):
+#               print("fourth")
+  
+# #  GO IN INIT OF B 
+# a = B() 
+
+
 class A:
        def __init__(self):
               print("in A init")
@@ -86,7 +111,7 @@ class A:
               print("second")
 
 # B is child class
-class B(A):
+class B:
        def __init__(self):
               # call init of both 
               super().__init__() 
@@ -96,5 +121,10 @@ class B(A):
        def feature4(self):
               print("fourth")
   
-#  GO IN INIT OF B 
-a = B() 
+class C(A,B):
+       def __init__(self):
+              super().__init__()
+              print("init of C")
+
+#  GO IN INIT OF A becoz of method resolution order (MRO)
+a = C() 
