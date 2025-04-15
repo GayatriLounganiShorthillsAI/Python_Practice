@@ -52,6 +52,29 @@
 # c = C()
 # c.feature5()
 
+# class A:
+#        def __init__(self):
+#               print("in A init")
+
+#        def feature1(self):
+#               print("first")
+
+#        def feature2(self):
+#               print("second")
+
+# # B is child class
+# class B(A):
+#        def __init__(self):
+#               print("in b init")
+#        def feature3(self):
+#               print("third")
+#        def feature4(self):
+#               print("fourth")
+  
+# #  GO IN INIT OF B 
+# a = B() 
+
+
 class A:
        def __init__(self):
               print("in A init")
@@ -65,6 +88,8 @@ class A:
 # B is child class
 class B(A):
        def __init__(self):
+              # call init of both 
+              super().__init__() 
               print("in b init")
        def feature3(self):
               print("third")
@@ -73,4 +98,3 @@ class B(A):
   
 #  GO IN INIT OF B 
 a = B() 
-
